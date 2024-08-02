@@ -1,0 +1,220 @@
+<!DOCTYPE html><!--
+  Original design by Free CSS Templates
+  http://www.freecsstemplates.org
+  Released for free under a Creative Commons Attribution 2.5 License
+  Heavily modified by yours truly.
+  --><html xmlns="http://www.w3.org/1999/xhtml"><head>
+      
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+          <title>Sehadatullah Atal - Game Design Portfolio</title>
+      <meta name="keywords" content="game games video development design programming level levels designer call duty pirates caribbean pixie hollow fairies disney waffle queen titanfall respawn entertainment naughty dog last of us uncharted blizzard survival crash autodrive world builder leader leadership">
+      <meta name="description" content="Software & Game Programmer | UCSC Computer Science: Game Design Graduate | this portfolio highlights my software and game development work.">
+      <meta name="language" content="English">
+      <meta name="author" content="Sehadatullah Atal">
+      <meta name="robots" content="all">
+      <link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
+      <script type="text/javascript" async="" src="js/ga.js"></script><script type="text/javascript">
+  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-7939992-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  
+  </script>
+  </head>
+  
+  <body>
+    <div id="wrapper">
+        <div id="logo">
+          <div id="header">
+            <h1>
+              <strong class="greenEntry">Sehadatullah Atal</strong><br>
+            </h1>
+          </div>
+          <div align="right"><br>
+          <a href="https://www.linkedin.com/in/sehadatullah-atal-069790317/" target="_new"><img src="images/linkedin.png" alt="" width="36" height="36" title="LinkedIn Profile"></a>&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;<a href="ResumeAtal.pdf" target="_new"><img src="images/resume.png" alt="" width="36" height="36" title="Resume"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        </div>
+        
+        
+        
+       
+        <div id="header">                             
+          <div class="navbar">
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+              <button class="dropbtn">Experience
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="Research.html">GPU Research - UCSC</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <button class="dropbtn">Projects 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="https://store.steampowered.com/app/3031450/Visceral_Abyss/">Visceral Abyss</a>
+                <a href="IK.html">Procedural Animation: IK</a>
+              </div>
+            </div>  
+            <a href="bio.html">About &amp; Resume</a>
+          </div>                                        
+        <div id="menu">
+          </div>            
+      </div>
+        
+        
+        
+        
+        
+        
+        <hr>
+        <div id="page">
+        <div id="content">
+                <div class="post">
+                  <div class="entry">
+                    <h2><strong class="title"></strong></h2>
+                      <h2><br>
+                      </h2>
+  <center>
+    <h1>
+      <strong class="greenEntry">Procedural Generation: Inverse Kinematics | Walk IK | Arm IK</strong><br>
+    </h1>
+    <br>
+    <h2>
+      <a><img src="images/IKFULL.gif" alt="" width="974" height="548"></a><br>
+      <br>
+    </h2>
+  </center>
+  
+<h2>
+  <strong class="greenEntry">Overview</strong><br>
+</h2>
+<br>
+<p>This system handles procedural animation aswell procedural body positioning using mathematics for a multi-legged character and arm joints using Inverse Kinematics (IK) to create realistic and infinite motions. The system is designed to be flexible and adaptable, allowing it to work with any animation rigs without requiring specific modifications or customizations for each rig. The system ensures that each leg steps/arm moves in a realistic manner, fitting to the ground/target and adjusting based on the character's movement and velocity. This system includes settings for step distance, height, speed, cycle timing, and more to control the animation.</p>
+
+<h2><strong class="greenEntry">What is Inverse Kinematics (IK)?</strong></h2>
+<br>
+<p>Inverse Kinematics (IK) is a method used in animation and robotics to calculate the movement of joints in a limb or a chain of limbs. Given a desired end position for a limb (such as a hand or a foot), IK calculates the joint angles needed to achieve that position. This is particularly useful for animating characters in a natural and realistic manner.</p>
+
+<h3><strong class="greenEntry">Simple Example: A Two-Joint Arm</strong></h3>
+<br>
+<p>Consider a simple robotic arm with two joints: the shoulder and the elbow. The goal is to position the hand (end effector) at a specific point in space. IK will determine the angles of the shoulder and elbow joints to place the hand at the target position.</p>
+<p>For example, if the target position for the hand is to reach a point directly in front of the shoulder:</p>
+<ul>
+    <li>IK calculates the required angle of the shoulder joint.</li>
+    <li>IK calculates the required angle of the elbow joint.</li>
+    <li>The arm moves to place the hand at the target position with the calculated joint angles.</li>
+</ul>
+<p>Using IK, animators and developers can create more dynamic and realistic animations without manually adjusting each joint.</p>
+<a><img src="images/IKexample.jpg" alt="" width="420" height="215"></a>
+<a><img src="images/IKARMS.gif" alt="" width="974" height="548"></a>
+<center>
+<h4><strong class="greenEntry">A simple 3-joint example of arm kinematics | shoulder, elbow, wrist.</strong></h4>
+</center>
+<br>
+<br>  
+                  </div>
+                  
+                  <h2>
+                    <strong class="greenEntry">Mathematics Behind Functions</strong><br>
+                  </h2>
+
+            <div class="math">
+                <br>
+                <h3>
+                <strong class="greenEntry">Velocity Calculation</strong><br>
+                </h3>
+                
+                <br>
+                <p>The velocity is calculated as the difference between the current and previous positions of the character, divided by the time elapsed:</p>
+                <pre><code>velocity = (current position - last position) / delta time</code></pre>
+            </div>
+
+            <div class="math">
+                <h3>
+                  <br>
+                  <strong class="greenEntry">Step Arc Path</strong><br>
+                  <br>
+                </h3>
+                <p>The height of the leg during a step follows an animation curve defined by <code>legArcPathY</code>. This creates a smooth arc from the start to the end of the step. The height \( y \) at any point in the step is given by evaluating the curve at the current progress:</p>
+                <pre><code>y = legArcPathY.Evaluate(current) * stepHeight * arcHeitMultiply</code></pre>
+            </div>
+
+            <div class="math">
+              <h3>
+                <br>
+                <strong class="greenEntry">Clamping and Remapping</strong><br>
+                <br>
+              </h3>
+                <p>To ensure the velocity doesn't exceed a maximum value, it is clamped and remapped:</p>
+                <pre><code>clampDevider = 1 / Remap(velocity.magnitude, 0, velocityClamp, 1, 2)</code></pre>
+                <p>The remapping function scales a value from one range to another:</p>
+                <pre><code>Remap(x, oldLow, oldHigh, newLow, newHigh) = newLow + ((x - oldLow) / (oldHigh - oldLow)) * (newHigh - newLow)</code></pre>
+
+                <a><img src="images/KNGif.gif" alt="" width="974" height="548"></a>
+                <br>
+                <br>
+                <br>
+                <h2><strong class="greenEntry">Main Functions</strong></h2>
+                <br>
+                <h3><strong class="greenEntry">Start</strong></h3>
+                <p>Initializes the script, setting up leg positions, timings, and starting the timing update coroutine.</p>
+                <br>
+                <h3><strong class="greenEntry">Update</strong></h3>
+                <p>Handles the main logic for updating leg positions and movements based on the character's velocity. It calculates the velocity, adjusts step timings, and moves legs accordingly.</p>
+                <br>
+                <h3><strong class="greenEntry">SetUp</strong></h3>
+                <p>Sets up the target step position for a leg based on the character's velocity and checks if the target position is valid.</p>
+                <br>
+                <h3><strong class="greenEntry">MakeStep</strong></h3>
+                <p>Handles the animation of the leg moving to the target step position. Uses a coroutine to smoothly transition the leg from its current position to the target position using an arc path.</p>
+                <br>
+                <h3><strong class="greenEntry">LegReachedTargetPosition</strong></h3>
+                <p>Updates the leg position once it reaches the target step position and triggers events for visual and sound effects.</p>
+                <br>
+                <h3><strong class="greenEntry">UpdateTimings</strong></h3>
+                <p>Periodically updates the step timings to ensure they remain synchronized.</p>
+                <br>
+                <h3><strong class="greenEntry">GetLegArray</strong></h3>
+                <p>Returns the array of leg IK targets.</p>
+                <br>
+                <h3><strong class="greenEntry">GetDistanceToTarget</strong></h3>
+                <p>Calculates the distance from the current leg position to the target step position.</p>
+                <br>
+                <h3><strong class="greenEntry">GetDistanceToGround</strong></h3>
+                <p>Calculates the distance from a leg to the ground using a raycast.</p>
+                <br>
+                <h3><strong class="greenEntry">IsLegMoving</strong></h3>
+                <p>Returns whether a specific leg is currently moving.</p>
+                <br>
+                <h3><strong class="greenEntry">GetAverageLegHeight</strong></h3>
+                <p>Calculates the average height of all legs from the ground to adjust the body position.</p>
+                <br>
+                <h3><strong class="greenEntry">Remap</strong></h3>
+                <p>Remaps a value from one range to another.</p>
+                <br>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
+                  <div class="entry"> </div> 
+              </div>
+            </div>
+   		</div>
+        <div style="clear: both;">&nbsp;</div>
+    	<div id="footer">
+            <p>Sehadatullah Atal<br>
+            </p>
+   		</div>
+    </div>
+
+
+</body></html>
